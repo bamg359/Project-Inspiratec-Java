@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Scanner;
+
 public class Category {
 
 
@@ -7,6 +9,8 @@ public class Category {
     private int categoryId;
 
     private String categoryName;
+
+    Scanner sc = new Scanner(System.in);
 
 
     public Category(int categoryId, String categoryName) {
@@ -36,6 +40,22 @@ public class Category {
 
 
     // Métodos propios
+
+
+    public void createCategory(){
+
+        System.out.println("Ingrese el ID");
+        categoryId = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Ingrese el nombre de la categoria");
+        categoryName = sc.nextLine();
+
+    }
+
+    public void listCategory(){
+        System.out.println("Id: " +categoryId + "\n" +
+                "Nombre Categoria: " + categoryName);
+    }
 
 
 
