@@ -13,9 +13,13 @@ public class TestProduct {
 
         category.createCategory();
 
-        product.createProduct();
+        category.createCategory();
 
-        product.printProduct();
+        category.printCategories();
+
+        //product.createProduct();
+
+        //product.printProduct();
 
 
 

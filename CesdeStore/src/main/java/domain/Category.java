@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Category {
@@ -42,19 +43,39 @@ public class Category {
     // Métodos propios
 
 
+    //ArrayList<String> categories = new ArrayList<String>();
+
+    String [] categories = new String[5];
+
     public void createCategory(){
+
+        String [] category = new String[2];
 
         System.out.println("Ingrese el ID");
         categoryId = sc.nextInt();
+        category[0] = categoryId + "";
         sc.nextLine();
         System.out.println("Ingrese el nombre de la categoria");
         categoryName = sc.nextLine();
+        category[1] = categoryName;
+
+        
 
     }
 
     public void listCategory(){
         System.out.println("Id: " +categoryId + "\n" +
                 "Nombre Categoria: " + categoryName);
+    }
+
+
+
+    public void printCategories(){
+
+        for(int i = 0; i < categories.length; i++ ){
+
+            System.out.println(categories[i]);
+        }
     }
 
 
