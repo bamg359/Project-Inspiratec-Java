@@ -8,10 +8,10 @@ public class Product {
     private int productId;
     private String productName;
     private String description;
-    private Category category;
+    Category category;
     private float cost;
     private float profit;
-    private float price = cost/(1 - (profit/100));
+    private float price;
     private String state;
 
     Scanner sc = new Scanner(System.in);
@@ -109,6 +109,40 @@ public class Product {
 
         System.out.println("Ingrese el id del producto");
         productId = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Ingrese el nombre del producto");
+        productName = sc.nextLine();
+        System.out.println("Ingrese la descripcion");
+        description = sc.nextLine();
+        System.out.println("Seleccione una categoria");
+        category.getCategoryName();
+        System.out.println("Ingrese el costo del producto");
+        cost = sc.nextFloat();
+        System.out.println("Ingrese el margen de ganancia");
+        profit = sc.nextFloat();
+        sc.nextLine();
+        System.out.println("Calculando Precio...");
+        price = calculatePrice(cost, profit);
+        System.out.println("Seleccione un estado");
+        state = sc.nextLine();
+
+    }
+
+    public float calculatePrice(float cost, float profit){
+
+        return cost/(1- (profit/100));
+    }
+
+    public void printProduct(){
+
+        System.out.println("Id " + productId + "\n" +
+                "Nombre: " + productName + "\n" +
+                "Descripcion" + description + "\n" +
+                "Categoria " + category.getCategoryName() + "\n" +
+                "costo" + cost + "\n" +
+                "Ganancia "  + profit + "\n" +
+                "Precio" + price + "\n" +
+                "Estado" + state );
 
 
     }
