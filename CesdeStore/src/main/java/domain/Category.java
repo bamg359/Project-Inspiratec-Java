@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Category {
@@ -43,9 +44,40 @@ public class Category {
     // Métodos propios
 
 
-    //ArrayList<String> categories = new ArrayList<String>();
+    List<ArrayList<String>> categories = new ArrayList<>();
 
-    String [] categories = new String[5];
+    public void createCategory(){
+
+        ArrayList<String> category = new ArrayList<String>();
+
+        System.out.println("Ingrese el ID");
+        categoryId = sc.nextInt();
+        String categoryIdS = categoryId+ "";
+        category.add(categoryIdS);
+        sc.nextLine();
+        System.out.println("Ingrese el nombre de la categoria");
+        categoryName = sc.nextLine();
+        category.add(categoryName);
+        categories.add(category);
+    }
+
+
+    public void printCategories(){
+
+        for(ArrayList i: categories){
+            System.out.println(i);
+        }
+
+    }
+
+
+
+
+
+
+
+    /*
+    String [][] categories = new String[5][2];
 
     public void createCategory(){
 
@@ -58,9 +90,9 @@ public class Category {
         System.out.println("Ingrese el nombre de la categoria");
         categoryName = sc.nextLine();
         category[1] = categoryName;
-
-        
-
+        System.out.println("Indique el numero de item a crear");
+        int itemNumber = sc.nextInt();
+        categories[itemNumber] = category;
     }
 
     public void listCategory(){
@@ -73,10 +105,11 @@ public class Category {
     public void printCategories(){
 
         for(int i = 0; i < categories.length; i++ ){
+            for(int j = 0; j < categories[i].length; j++)
 
-            System.out.println(categories[i]);
+            System.out.println(categories[i][j]);
         }
-    }
+    }*/
 
 
 
