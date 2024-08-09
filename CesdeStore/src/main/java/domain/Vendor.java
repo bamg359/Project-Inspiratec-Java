@@ -1,5 +1,8 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vendor extends User{
 
     // Atributos
@@ -52,9 +55,13 @@ public class Vendor extends User{
 
     // Metodos Propios
 
+    List<ArrayList<Object>> costumers = new ArrayList<>();
+
     @Override
     public void createUser() {
         super.createUser();
+
+        ArrayList<Object> costumer = new ArrayList<>();
 
         System.out.println("Ingrese el tipo de vendedor");
         vendorType = sc.nextLine();
@@ -62,6 +69,12 @@ public class Vendor extends User{
         categoryVendor = sc.nextLine();
         System.out.println("Ingrese la disponibilidad del vendedor");
         aviability = sc.nextBoolean();
+
+        costumer.add(getUserId());
+        costumer.add(getUserName());
+        costumer.add(getUserLastName());
+
+        costumers.add(costumer);
     }
 
 

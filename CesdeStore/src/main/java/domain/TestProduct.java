@@ -17,9 +17,9 @@ public class TestProduct {
 
         category.printCategories();
 
-        //product.createProduct();
+        product.createProduct();
 
-        //product.printProduct();
+        product.printProduct();
 
 
 

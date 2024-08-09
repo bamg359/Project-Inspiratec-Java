@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class User {
@@ -62,6 +63,8 @@ public class User {
 
 
     public void createUser(){
+
+
 
         System.out.println("Ingrese Id");
         userId = sc.nextInt();
