@@ -14,7 +14,7 @@ public class Conexion {
 
            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cesdestore", "root", "");
            if(connection!=null){
-               System.out.println("Conexion Exitosa");
+               System.out.println("Conexión Exitosa");
            }
 
         }catch(SQLException e){
