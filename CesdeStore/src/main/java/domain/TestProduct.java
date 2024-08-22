@@ -1,5 +1,7 @@
 package domain;
 
+import interfaz.CategoryView;
+
 public class TestProduct {
 
     public static void main(String[] args) {
@@ -8,18 +10,14 @@ public class TestProduct {
 
         Product product = new Product();
 
-        product.category = category;
+        CategoryView categoryView = new CategoryView(category);
+
+        categoryView.createCategory(category);
 
 
-        category.createCategory();
 
-        category.createCategory();
 
-        category.printCategories();
 
-        product.createProduct();
-
-        product.printProduct();
 
 
 

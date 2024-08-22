@@ -1,5 +1,6 @@
 package repository;
 
+import domain.Category;
 import repository.database.Conexion;
 
 import java.sql.Connection;
@@ -8,8 +9,9 @@ import java.sql.SQLException;
 
 public class CategoryRepository {
 
-    Conexion conexion = new Conexion();
-    public void createCategory(){
+
+    public static void createCategory(Category category){
+        Conexion conexion = new Conexion();
 
         try(Connection connect = conexion.get_connect() ){
 
@@ -17,9 +19,12 @@ public class CategoryRepository {
 
             try{
 
-                String query = "INSERT INTO category(category_id, category_name) VALUES (?,?)";
+                String query = "INSERT INTO category( category_name) VALUES (?)";
                 ps = connect.prepareStatement(query);
-                
+                ps.setString(1, category.getCategoryName());
+                ps.executeUpdate();
+                System.out.println("Registro de libro Exitoso");
+
             }catch(SQLException e){
                 System.out.println(e);
             }
@@ -36,4 +41,4 @@ public class CategoryRepository {
 
 
 
-}
+
