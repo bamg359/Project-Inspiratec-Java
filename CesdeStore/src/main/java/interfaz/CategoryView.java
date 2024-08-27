@@ -1,6 +1,7 @@
 package interfaz;
 
 import Service.CategoryService;
+import Service.CategoryServiceInterface;
 import domain.Category;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class CategoryView {
     }
     public void createCategory(Category category){
 
+        CategoryServiceInterface categoryService = new CategoryService(category);
+
         System.out.println("Ingrese el ID");
         int categoryId = sc.nextInt();
         sc.nextLine();
@@ -27,7 +30,7 @@ public class CategoryView {
         category.setCategoryId(categoryId);
         category.setCategoryName(categoryName);
 
-        CategoryService.createCategory(category);
+        categoryService.createCategory(category);
 
     }
 

@@ -4,14 +4,16 @@ import domain.Category;
 import interfaz.CategoryView;
 import repository.CategoryRepository;
 
-public class CategoryService {
+public class CategoryService implements CategoryServiceInterface {
 
     Category category;
     public CategoryService(Category category){
         this.category = category;
     }
 
-    public static void createCategory(Category category){
+
+    @Override
+    public void createCategory(Category category){
 
         CategoryRepository.createCategory(category);
 
