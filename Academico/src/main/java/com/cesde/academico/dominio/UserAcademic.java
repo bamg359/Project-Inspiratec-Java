@@ -1,4 +1,4 @@
-package dominio;
+package com.cesde.academico.dominio;
 
 public class UserAcademic {
 
