@@ -10,11 +10,10 @@ public interface StudentService {
 
 
 
-    public List<Student> createStudent();
-    public List<Student> listStudents(Course coure);
-    public int listStudentById(int sudentId);
-    
-
-
+    public List<Student> createStudent(Student student);
+    public List<Student> listStudents(Student student);
+    public List<Student> listStudentById(int studentId);
+    public List<Student> updateStudent(Student student);
+    public List<Student> deleteStudent(int studentId);
 
 }
