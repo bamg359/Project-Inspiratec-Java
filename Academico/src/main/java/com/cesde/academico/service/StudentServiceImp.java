@@ -1,5 +1,6 @@
 package com.cesde.academico.service;
 
+import com.cesde.academico.Repository.StudentRepository;
 import com.cesde.academico.dominio.Course;
 import com.cesde.academico.dominio.Student;
 
@@ -14,6 +15,8 @@ public class StudentServiceImp implements StudentService{
 //    StudentService studentService;
 
 
+    StudentRepository studentRepository;
+
     private List<Student> students = new ArrayList<>(Arrays.asList(new Student(1,"Pepito" , "Perez", "correo@mail.com", "32145467890", "1234", "Nuevo", "Activo" ),
             new Student(2,"Juan" , "Perez", "correo@mail.com", "32145467890", "1234", "Nuevo", "Activo" ),
             new Student(3,"Maria" , "Perez", "correo@mail.com", "32145467890", "1234", "Antiguo", "Activo" ),
@@ -26,9 +29,9 @@ public class StudentServiceImp implements StudentService{
 
 
     @Override
-    public List<Student> createStudent(Student student) {
+    public void createStudent(Student student) {
 
-        return students;
+        studentRepository.saveStudent(student);
     }
 
     @Override
