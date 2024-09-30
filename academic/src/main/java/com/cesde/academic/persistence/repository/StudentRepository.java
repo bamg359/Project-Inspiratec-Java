@@ -1,6 +1,6 @@
-package com.cesde.academic.perisitence.repository;
+package com.cesde.academic.persistence.repository;
 
-import com.cesde.academic.perisitence.entities.StudentEntity;
+import com.cesde.academic.persistence.entities.StudentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {

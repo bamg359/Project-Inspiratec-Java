@@ -1,9 +1,11 @@
-package com.cesde.academic.perisitence.entities;
+package com.cesde.academic.persistence.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 @Entity(name= "teacher")
+@Data
 public class TeacherEntity {
 
     @Id

@@ -10,7 +10,7 @@ public interface StudentService {
 
     public List<Student> getStudentById(Integer studentId);
 
-    public List<Student> createStudent(Student student);
+    public void createStudent(Student student);
 
     public List<Student> updateStudent(Student student);
 

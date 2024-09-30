@@ -1,7 +1,8 @@
 package com.cesde.academic.services;
 
 import com.cesde.academic.domain.Student;
-import com.cesde.academic.perisitence.repository.StudentRepository;
+import com.cesde.academic.persistence.entities.StudentEntity;
+import com.cesde.academic.persistence.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,15 @@ public class StudentServiceImp implements StudentService {
 
 
     @Override
-    public List<Student> createStudent(Student student) {
-        return null;
+    public void createStudent(Student student) {
+
+        StudentEntity studentEntity = new StudentEntity();
+
+        studentEntity.setIdUser(student.getIdUser());
+        studentEntity.setUserName(student.getUserName());
+
+        studentRepository.save(studentEntity);
+
     }
 
     @Override
